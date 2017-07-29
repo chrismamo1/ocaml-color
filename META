@@ -1,0 +1,4 @@
+version = "%{version}%"
+description = "colors in OCaml"
+archive(byte) = "color.cmo"
+archive(native) = "color.cmxa"

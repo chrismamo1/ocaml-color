@@ -1,0 +1,20 @@
+opam-version: "1.2"
+name: "color"
+version: "0.0.1"
+authors: [ "John Christopher McAlpine" ]
+maintainer: "christophermcalpine@gmail.com"
+homepage: "https://github.com/chrismamo1/ocaml-color"
+dev-repo: "https://github.com/chrismamo1/ocaml-color.git"
+bug-reports: "https://github.com/chrismamo1/ocaml-color/issues/"
+build: [
+  [make "native-code"] {ocaml-native}
+  [make "byte-code"] {!ocaml-native}
+]
+install: [
+  [make "install"]
+]
+remove: [["ocamlfind" "remove" "ppx_netblob"]]
+depends: [
+  "ocamlfind" {build & >= "1.5.2"}
+]
+available: [ocaml-version > "4.03.0"]
